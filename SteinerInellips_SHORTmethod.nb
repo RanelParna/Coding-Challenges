@@ -1,0 +1,21 @@
+Notebook[{Cell[
+BoxData[RowBox[{RowBox[{RowBox[{"SteinerInellipseArea","[",RowBox[
+{"pts",":",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{"x1_",",","y1_"}],"}"}],",",RowBox[
+{"{",RowBox[{"x2_",",","y2_"}],"}"}],",",RowBox[{"{",RowBox[{"x3_",",","y3_"}],"}"}]}],"}"}]}],"]"}],":="," ",RowBox[
+{RowBox[{"Area","[",RowBox[{"Triangle","[","pts","]"}],"]"}],"*",RowBox[{RowBox[{"N","[","Pi","]"}],"/",RowBox[
+{"(",RowBox[{"3",RowBox[{"Sqrt","[","3","]"}]}],")"}]}]}]}],";"}]],"Input",CellLabel -> "In[33]:= ",
+ExpressionUUID -> "a674f0e5-8495-46d2-96d6-d95bb80c46f1"],Cell[
+CellGroupData[{Cell[
+BoxData[
+RowBox[{"SteinerInellipseArea","[",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{"3.5",","," ",RowBox[
+{"-","8.5"}]}],"}"}],","," ",RowBox[{"{",RowBox[{RowBox[{"-","6.1"}],","," ",RowBox[
+{"-","0.5"}]}],"}"}],","," ",RowBox[{"{",RowBox[{"8.1",","," ",RowBox[{"-","3.2"}]}],"}"}]}],"}"}],"]"}]],
+"Input",CellLabel -> "In[4]:= ",ExpressionUUID -> "df9b1bb0-206b-41db-a1f8-c186fea65413"],Cell[
+BoxData[
+"26.505654709342704`",StandardForm],"Output",CellLabel -> "Out[4]= ",ExpressionUUID -> "5a36efc2-78ee-4acb-bd20-548b2338d6e3"]},
+Open],ExpressionUUID -> "f780b18d-4c80-41b4-8d9c-2b30232e5392"],Cell[
+BoxData[RowBox[
+{RowBox[{"SteinerInellipseArea","[","pts","]"}],":="," ",RowBox[{RowBox[{"Area","[",RowBox[
+{"Triangle","[","pts","]"}],"]"}],"*",RowBox[{RowBox[{"N","[","\[Pi]","]"}],"/","3"}],RowBox[
+{"\[Sqrt]","3"}]}]}]],"Input",ExpressionUUID -> "52ebd4da-94a4-43d3-8165-23bb72ecb7ef"]},
+StyleDefinitions -> "Default.nb",FrontEndVersion -> "13. for Wolfram Cloud 1.62 (April 8, 2022)"]

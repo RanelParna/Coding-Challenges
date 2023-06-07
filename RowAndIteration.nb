@@ -1,0 +1,90 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2663,         80]
+NotebookOptionsPosition[      2303,         66]
+NotebookOutlinePosition[      2710,         82]
+CellTagsIndexPosition[      2667,         79]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"singlestep", "[", "listIN_", "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"listOUT", " ", "=", " ", "listIN"}], "}"}], ",", "\n", "   ", 
+    RowBox[{
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", " ", "=", " ", "1"}], ",", " ", 
+       RowBox[{"i", " ", "\[LessEqual]", " ", 
+        RowBox[{"Length", "[", "listIN", "]"}]}], ",", " ", 
+       RowBox[{"i", "++"}], ",", "\n", "    ", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"i", " ", "<", " ", 
+          RowBox[{"Length", "[", "listIN", "]"}]}], ",", " ", 
+         RowBox[{
+          RowBox[{"listOUT", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], " ", "=", " ", 
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"listIN", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], " ", "+", " ", 
+             RowBox[{"listIN", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", " ", "+", " ", "1"}], "]"}], "]"}]}], ",", " ", 
+            "10"}], "]"}]}], ",", " ", "\n", "     ", 
+         RowBox[{
+          RowBox[{"listOUT", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], " ", "=", " ", 
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"listIN", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], " ", "+", " ", 
+             RowBox[{"listIN", "[", 
+              RowBox[{"[", "1", "]"}], "]"}]}], ",", " ", "10"}], "]"}]}]}], 
+        "]"}]}], "]"}], ";", "\n", "   ", "listOUT"}]}], "\n", 
+   "\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]", 
+   "]"}]}]], "Input",
+ CellLabel->
+  "In[118]:= ",ExpressionUUID->"390c2ecb-435c-43f5-9e45-3a1539e8b4e4"]
+},
+WindowSize->{581.25, 648.75},
+WindowMargins->{{423, Automatic}, {Automatic, 40.5}},
+FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"db078711-401f-4c17-9109-c8ebbd42dd3e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1741, 44, 143, "Input",ExpressionUUID->"390c2ecb-435c-43f5-9e45-3a1539e8b4e4"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
