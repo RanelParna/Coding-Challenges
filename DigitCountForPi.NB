@@ -1,0 +1,127 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3476,        117]
+NotebookOptionsPosition[      2863,         97]
+NotebookOutlinePosition[      3270,        113]
+CellTagsIndexPosition[      3227,        110]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["Digit",
+  FontSize->24,
+  FontWeight->Bold],
+ StyleBox[" ",
+  FontSize->24,
+  FontWeight->Bold],
+ StyleBox["Frequency",
+  FontSize->24,
+  FontWeight->Bold],
+ StyleBox[" ",
+  FontSize->24,
+  FontWeight->Bold],
+ StyleBox["for",
+  FontSize->24,
+  FontWeight->Bold],
+ StyleBox[" ",
+  FontSize->24,
+  FontWeight->Bold],
+ StyleBox["Pi",
+  FontSize->24,
+  FontWeight->Bold]
+}], "Section",ExpressionUUID->"32c9eda5-e5fc-4eae-a398-5a679d1c698a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"DigitCountPi", "[", "n_", "]"}], ":=", " ", "\n", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "x", "}"}], ",", "\n", 
+     RowBox[{
+      RowBox[{"x", " ", "=", " ", 
+       RowBox[{"Counts", "[", 
+        RowBox[{"Range", "[", 
+         RowBox[{"0", ",", "9"}], "]"}], "]"}]}], ";", "\n", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"x", "[", "i", "]"}], " ", "=", " ", "0"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", " ", "0", ",", " ", "9", ",", " ", "1"}], "}"}]}], 
+       "]"}], ";", "\n", 
+      RowBox[{"Values", "[", 
+       RowBox[{"AssociateTo", "[", 
+        RowBox[{"x", ",", 
+         RowBox[{"Counts", "[", 
+          RowBox[{"First", "[", 
+           RowBox[{"RealDigits", "[", 
+            RowBox[{"Pi", ",", " ", "10", ",", " ", "n"}], "]"}], "]"}], 
+          "]"}]}], "]"}], "]"}]}]}], "]"}]}], "\n", 
+  "\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\
+\[NonBreakingSpace]"}], "\n", 
+ RowBox[{"\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\
+\[NonBreakingSpace]", 
+  RowBox[{"DigitCountPi", "[", "100", "]"}]}], "\n", 
+ RowBox[{"\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\
+\[NonBreakingSpace]"}]}], "Code",
+ CellChangeTimes->{{3.8951451770685825`*^9, 3.8951451797405796`*^9}},
+ CellLabel->
+  "(Debug) In[7]:=",ExpressionUUID->"07c4a22e-f728-4021-8358-06473d64ae89"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "8", ",", "8", ",", "12", ",", "12", ",", "10", ",", "8", ",", "9", ",", 
+   "8", ",", "12", ",", "13"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8951451701009035`*^9, 3.8951451803186054`*^9}},
+ CellLabel->
+  "(Debug) Out[8]=",ExpressionUUID->"01089f8e-acfd-48a7-a81b-2fdc0a9df40f"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{581.25, 648.75},
+WindowMargins->{{423, Automatic}, {Automatic, 40.5}},
+FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"457935f0-d5b2-4103-a27e-1bbeb7562038"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 463, 22, 62, "Section",ExpressionUUID->"32c9eda5-e5fc-4eae-a398-5a679d1c698a"],
+Cell[CellGroupData[{
+Cell[1068, 48, 1440, 36, 187, "Code",ExpressionUUID->"07c4a22e-f728-4021-8358-06473d64ae89"],
+Cell[2511, 86, 324, 7, 46, "Output",ExpressionUUID->"01089f8e-acfd-48a7-a81b-2fdc0a9df40f"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
