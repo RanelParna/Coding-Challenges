@@ -1,12 +1,26 @@
 # Challenge: writing a function, MaxColorDistance, which identifies the pair or 
 # pairs of colors in an image that are most distinct from each other, based on color distance.
 
-MXColorDistance[img_Image] :=
-Module[{y = img}, colors = DominantColors[y];
-lc = Length[colors]; maxDst = 0;
-For[iMax = 1;
+colors = DominantColors[image]
+
+lc = Length[colors];
+maxDst = 0;
+iMax = 1;
 jMax = 1;
-i = 1, i < lc, i++,
-For[j = i + 1, j ≤ lc, j++, ww = ColorDistance[colors〚i〛, colors〚j〛];
-If[ww > maxDst, maxDst = ww; iMax = i; jMax = j]]];
-Print[Sort[List[colors〚iMax〛, colors〚jMax〛]]]]
+For[i = 1, i <= lc, i++,
+ For[j = i + 1, j <= lc, j++,
+  If[ColorDistance[colors[[i]], colors[[j]]] > maxDst, 
+   maxDst = ColorDistance[colors[[i]], colors[[j]]]; iMax = i; 
+   jMax = j]
+  ]]
+colors[[iMax]]
+colors[[jMax]]
+maxDst
+
+values = {};
+For[i = 1, i <= lc, i++,
+ For[j = i + 1, j <= lc, j++,
+  Print[i, ",", j, "->", ColorDistance[colors[[i]], colors[[j]]]];
+  AppendTo[values, ColorDistance[colors[[i]], colors[[j]]]]
+  ]]
+Max[values]
