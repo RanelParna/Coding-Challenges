@@ -1,6 +1,5 @@
-# Challenge: creating a function RoughSplit, to express a very large 
-# even integer as the sum of two numbers (a + b), where neither number 
-# has any prime factors smaller than a specified cutoff value.
+(* Challenge: creating a function RoughSplit, to express a very large even integer as the 
+sum of two numbers (a + b), where neither number has any prime factors smaller than a specified cutoff value. *)
 
 (* Get the primes less than c*)
 primesBelow[c_] := Module[{out},
