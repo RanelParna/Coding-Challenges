@@ -1,3 +1,6 @@
+# Challenge: writing a function, LatticeBallCount, which calculates the number of integer lattice points 
+# (points with integer coordinates) that lie within a three-dimensional sphere of a given radius, up to 200.
+
 # V1: 
 # A brute-force method 
 
