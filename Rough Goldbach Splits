@@ -1,0 +1,32 @@
+# Challenge: creating a function RoughSplit, to express a very large 
+# even integer as the sum of two numbers (a + b), where neither number 
+# has any prime factors smaller than a specified cutoff value.
+
+(* Get the primes less than c*)
+primesBelow[c_] := Module[{out},
+out = Prime[Range[PrimePi[c]]];
+If[PrimeQ[c], out = Delete[out, -1]];
+out
+]
+
+(* Determine whether x has no prime factors below c *)
+noPrimeOfxBelowc[x_, c_] := Module[{ps, hasPrimeFactor},
+ps = primesBelow[c]; (*Print[ps];*)
+hasPrimeFactor = False;
+For[i = 1, i ≤ Length[ps], i++,
+If[Divisible[x, ps〚i〛], hasPrimeFactor = True; Break[]]];
+! hasPrimeFactor
+]
+
+RoughSplit[m_, n_, c_] := Module[{a, sol, iterationsMax},
+a = m^n / 2;
+sol = -1;
+iterationsMax = 10 000;
+For[x = 0, x < iterationsMax, x++,
+If[noPrimeOfxBelowc[a - x, c] && noPrimeOfxBelowc[a + x, c],
+sol = x; Break[],]];
+If[sol < 0, Return[Print["Sorry, the maximal number of iterations (=",
+iterationsMax, ") has been exceeded!"]]];
+sol
+];
+
