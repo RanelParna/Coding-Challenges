@@ -1,115 +1,87 @@
-Notebook[{Cell[
-CellGroupData[{Cell[
-BoxData[StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[
-{"Vertices"," ","of"," ","the"," ","triangles"," ","as"," ","complex"," ","numbers"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{RowBox[{"z1","=",RowBox[{"-","1.5"}]}],";"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{"z2"," ","="," ","1.5"}],";"}],"\[IndentingNewLine]",RowBox[{RowBox[{"z3"," ","="," ",RowBox[
-{"1.5","I"}]}],";"}],"\[IndentingNewLine]",RowBox[{"(*"," ",RowBox[{"Utility"," ","function"," ","to"," ","get"," ",RowBox[
-{"(",RowBox[{"x",",","y"}],")"}]," ","from"," ","complex"," ","number"," ","z"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{"xy","[","z_","]"}],":=",RowBox[{"{",RowBox[{RowBox[{"Re","[","z","]"}],",",RowBox[
-{"Im","[","z","]"}]}],"}"}]}],"\[IndentingNewLine]",RowBox[{"(*"," ",RowBox[{"Steiner"," ","polynomial"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{"p","=",RowBox[{RowBox[{"(",RowBox[{"z","-","z1"}],")"}],RowBox[{"(",RowBox[
-{"z","-","z2"}],")"}],RowBox[{"(",RowBox[{"z","-","z3"}],")"}]}]}],";"}],"\[IndentingNewLine]",RowBox[
-{"(*"," ",RowBox[{"Derivative"," ","is"," ","a"," ","quadratic"," ","polynomial"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{"pd"," ","="," ",RowBox[{"Simplify","[",RowBox[{"D","[",RowBox[{"p",",","z"}],"]"}],"]"}]}],";"}],"\[IndentingNewLine]",RowBox[
-{"(*"," ",RowBox[{"The"," ","foci"," ","f1"," ","and"," ","f2"," ","of"," ","the"," ","Steiner"," ","Innelipse"," ","are"," ","given"," ","by"," ","the"," ","roots"," ","of"," ","p"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{RowBox[{"{",RowBox[{"f1",",","f2"}],"}"}],"=",RowBox[{"z","/.",RowBox[{"Solve","[",RowBox[
-{RowBox[{"pd","==","0"}],",","z"}],"]"}]}]}],";"}],"\[IndentingNewLine]",RowBox[{"f1",";"}],"\[IndentingNewLine]",RowBox[
-{"f2",";"}],"\[IndentingNewLine]",RowBox[{"(*"," ",RowBox[{"Ellipse"," ","centre"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{"centre"," ","="," ",RowBox[{RowBox[{"(",RowBox[{"f1","+","f2"}],")"}],"/","2"}]}],";"}],"\[IndentingNewLine]",RowBox[
-{"(*"," ",RowBox[{RowBox[{"The"," ","points"," ","of"," ","tangency"," ","v1"}],",","v2",",",RowBox[
-{RowBox[{"v3"," ","are"," ","at"," ","the"," ","mid"}],"-",RowBox[{"points"," ","of"," ","the"," ","triangles"," ","sides"}]}]}]," ","*)"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{"v1","=",RowBox[{RowBox[{"(",RowBox[{"z1","+","z2"}],")"}],"/","2"}]}],";"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{"v2"," ","=",RowBox[{RowBox[{"(",RowBox[{"z2","+","z3"}],")"}],"/","2"}]}],";"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{"v3","=",RowBox[{RowBox[{"(",RowBox[{"z1","+","z3"}],")"}],"/","2"}]}],";"}],"\[IndentingNewLine]",RowBox[
-{"(*"," ",RowBox[{"Compute"," ","the"," ","equation"," ","of"," ","the"," ","ellipse"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{"l","=",RowBox[{"N","[",RowBox[{RowBox[{"Abs","[",RowBox[{"f1","-","v1"}],"]"}],"+",RowBox[
-{"Abs","[",RowBox[{"f2","-","v1"}],"]"}]}],"]"}]}],";"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{"d1","=",RowBox[{RowBox[{"{",RowBox[{"x",",","y"}],"}"}],"-",RowBox[{"N","[",RowBox[
-{"xy","[","f1","]"}],"]"}]}]}],";"}],"\[IndentingNewLine]",RowBox[{RowBox[{"d2"," ","=",RowBox[
-{RowBox[{"{",RowBox[{"x",",","y"}],"}"}],"-",RowBox[{"N","[",RowBox[{"xy","[","f2","]"}],"]"}]}]}],";"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{"eq","=",RowBox[{RowBox[{"Simplify","[",RowBox[{RowBox[{"Sqrt","[",RowBox[
-{"Dot","[",RowBox[{"d1",",","d1"}],"]"}],"]"}],"+",RowBox[{"Sqrt","[",RowBox[{"Dot","[",RowBox[
-{"d2",",","d2"}],"]"}],"]"}]}],"]"}],"-","l"}]}],";"}],"\[IndentingNewLine]","\[IndentingNewLine]",RowBox[
-{"(*"," ",RowBox[{"Computing"," ","the"," ","area"}]," ","*)"}],"\[IndentingNewLine]","\[IndentingNewLine]",RowBox[
-{RowBox[{"a","=",RowBox[{"l","/","2"}]}]," ",";",RowBox[{"(*"," ",RowBox[{"Semi","-",RowBox[
-{"major"," ","axis"}]}]," ","*)"}],"\[IndentingNewLine]",RowBox[{"c","=",RowBox[{"N","[",RowBox[
-{"Abs","[",RowBox[{"f1","-","centre"}],"]"}],"]"}]}],";"," ",RowBox[{"(*"," ","Eccentricty"," ","*)"}],"\[IndentingNewLine]",RowBox[
-{"b","=",RowBox[{"Sqrt","[",RowBox[{RowBox[{"a","^","2"}],"-",RowBox[{"c","^","2"}]}],"]"}]}],";"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{"area"," ","="," ",RowBox[{"Pi","*","a","*","b"}]}]," ",";"}],"\[IndentingNewLine]","\[IndentingNewLine]",RowBox[
-{"Print","[",RowBox[{"\"The area is: \"",",","area"}],"]"}],"\[IndentingNewLine]","\[IndentingNewLine]"}]}]]],
-"Input",CellChangeTimes -> {{3862909858.185822`,3862910139.996311`},{3862910203.0233994`,3862910267.65213`},{3862910652.859378`,3862910738.458296`},{3862911084.4415417`,3862911097.125955`},{3862911139.407712`,3862911275.927084`},{3862911314.228794`,3862911332.828377`},{3862911365.279544`,3862911370.263279`},{3862911851.831025`,3862911909.2921553`},{3862911967.86755`,3862912058.6855783`},{3862912098.3815727`,3862912182.414415`},{3862912625.6523657`,3862912731.977995`},{3862912791.127157`,3862912811.355156`},{3862912859.4200583`,3862912877.590125`}},
-ExpressionUUID -> "3fe238fc-3b1f-4e88-9322-ce294b32ad80"],Cell[
-BoxData[InterpretationBox[
-RowBox[{"\"The area is: \"","1.3603495231756633`"}],SequenceForm["The area is: ",
-1.3603495231756633`],Editable -> False]],"Print",CellChangeTimes -> {{3862912684.9480658`,3862912689.460297`},{3862912722.504449`,3862912732.5538692`},{3862912811.823112`,3862912852.5054083`},3862912888.159335`,{3862912918.67274`,3862912945.6636753`}},
-CellLabel -> "During evaluation of In[1]:=",ExpressionUUID -> "3315e2bd-3d0f-4eec-9d29-c374792f0f08"]},
-Open],ExpressionUUID -> "32a12522-36c9-4209-91c5-6f7d493b01cd"],Cell[
-BoxData[RowBox[
-{RowBox[{RowBox[{"SteinerInEllipseArea","[","triangle_","]"}],":=",RowBox[{"Module","[",RowBox[
-{RowBox[{"{",RowBox[{"z1",",","z2",",","z3",",","x1",",","y1",",","x2",",","y2",",","x3",",","y3",",","f1",",","f2",",","centre",",","v1",",","v2",",","v3",",","d1",",","d2",",","l",",","a",",","b",",","c",",","area",",","p",",","pd",",","z"}],"}"}],",","\[IndentingNewLine]",RowBox[
-{RowBox[{RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{"x1",",","y1"}],"}"}],",",RowBox[
-{"{",RowBox[{"x2",",","y2"}],"}"}],",",RowBox[{"{",RowBox[{"x3",",","y3"}],"}"}]}],"}"}],"=","triangle"}],";","\[IndentingNewLine]",RowBox[
-{"z1","=",RowBox[{"x1","+",RowBox[{"y1","*","I"}]}]}],";","\[IndentingNewLine]",RowBox[
-{"z2"," ","="," ",RowBox[{"x2","+",RowBox[{"y2","*","I"}]}]}],";","\[IndentingNewLine]",RowBox[
-{"z3"," ","="," ",RowBox[{"x3","+",RowBox[{"y3","*","I"}]}]}],";","\[IndentingNewLine]",RowBox[
-{"p","=",RowBox[{RowBox[{"(",RowBox[{"z","-","z1"}],")"}],RowBox[{"(",RowBox[{"z","-","z2"}],")"}],RowBox[
-{"(",RowBox[{"z","-","z3"}],")"}]}]}],";","\[IndentingNewLine]",RowBox[{"(*"," ",RowBox[
-{"Derivative"," ","is"," ","a"," ","quadratic"," ","polynomial"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
-{"pd"," ","="," ",RowBox[{"Simplify","[",RowBox[{"D","[",RowBox[{"p",",","z"}],"]"}],"]"}]}],";","\[IndentingNewLine]",RowBox[
-{"(*"," ",RowBox[{"The"," ","foci"," ","f1"," ","and"," ","f2"," ","of"," ","the"," ","Steiner"," ","Inellipse"," ","are"," ","given"," ","by"," ","the"," ","roots"," ","of"," ","p"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
-{RowBox[{"{",RowBox[{"f1",",","f2"}],"}"}],"=",RowBox[{"z","/.",RowBox[{"Solve","[",RowBox[
-{RowBox[{"pd","==","0"}],",","z"}],"]"}]}]}],";","\[IndentingNewLine]",RowBox[{"(*"," ",RowBox[
-{"Ellipse"," ","centre"}]," ","*)"}],"\[IndentingNewLine]",RowBox[{"centre"," ","="," ",RowBox[
-{RowBox[{"(",RowBox[{"f1","+","f2"}],")"}],"/","2"}]}],";","\[IndentingNewLine]",RowBox[
-{"(*"," ",RowBox[{RowBox[{"The"," ","points"," ","of"," ","tangency"," ","v1"}],",","v2",",",RowBox[
-{RowBox[{"v3"," ","are"," ","at"," ","the"," ","mid"}],"-",RowBox[{"points"," ","of"," ","the"," ","triangles"," ","sides"}]}]}]," ","*)"}],"\[IndentingNewLine]",RowBox[
-{"v1","=",RowBox[{RowBox[{"(",RowBox[{"z1","+","z2"}],")"}],"/","2"}]}],";","\[IndentingNewLine]",RowBox[
-{"v2"," ","=",RowBox[{RowBox[{"(",RowBox[{"z2","+","z3"}],")"}],"/","2"}]}],";","\[IndentingNewLine]",RowBox[
-{"v3","=",RowBox[{RowBox[{"(",RowBox[{"z1","+","z3"}],")"}],"/","2"}]}],";","\[IndentingNewLine]",RowBox[
-{"(*"," ",RowBox[{"Compute"," ","the"," ","equation"," ","of"," ","the"," ","ellipse"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
-{"l","=",RowBox[{"N","[",RowBox[{RowBox[{"Abs","[",RowBox[{"f1","-","v1"}],"]"}],"+",RowBox[
-{"Abs","[",RowBox[{"f2","-","v1"}],"]"}]}],"]"}]}],";","\[IndentingNewLine]",RowBox[
-{"(*"," ",RowBox[{"Computing"," ","the"," ","area"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
-{"a","=",RowBox[{"l","/","2"}]}]," ",";",RowBox[{"(*"," ",RowBox[{"Semi","-",RowBox[
-{"major"," ","axis"}]}]," ","*)"}],"\[IndentingNewLine]",RowBox[{"c","=",RowBox[{"N","[",RowBox[
-{"Abs","[",RowBox[{"f1","-","centre"}],"]"}],"]"}]}],";"," ",RowBox[{"(*"," ","Eccentricty"," ","*)"}],"\[IndentingNewLine]",RowBox[
-{"b","=",RowBox[{"Sqrt","[",RowBox[{RowBox[{"a","^","2"}],"-",RowBox[{"c","^","2"}]}],"]"}]}],";"," ",RowBox[
-{"(*"," ",RowBox[{"Semi","-",RowBox[{"minor"," ","axis"}]}]," ","*)"}],"\[IndentingNewLine]",RowBox[
-{"area"," ","="," ",RowBox[{"Pi","*","a","*","b"}]}]," ",";","\[IndentingNewLine]","area"}]}],"\[IndentingNewLine]","]"}]}],";"}]],
-"Input",CellChangeTimes -> {{3862914334.554901`,3862914424.077622`},{3862914488.220729`,3862914606.8650227`},{3862914660.814886`,3862914722.2307777`},{3862914758.061221`,3862914889.670623`},{3862914939.363255`,3862914941.154923`}},
-ExpressionUUID -> "25ad5e7d-c380-4259-9bab-43a81cfddb9d"],Cell[
-CellGroupData[{Cell[
-BoxData[
-RowBox[{"SteinerInEllipseArea","[",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{RowBox[
-{"-","1.5"}],",","0"}],"}"}],",",RowBox[{"{",RowBox[{"1.5",",","0"}],"}"}],",",RowBox[
-{"{",RowBox[{"0",",","1.5"}],"}"}]}],"}"}],"]"}]],"Input",CellChangeTimes -> {{3.8629146164107647`*^9,3.8629146470228043`*^9},{3.862914899439013`*^9,3.862914901814745`*^9}},
-CellLabel -> "In[74]:=",ExpressionUUID -> "273d9399-68cf-4d13-a742-ea0b364d138b"],Cell[
-BoxData[
-"1.3603495231756633`"],"Output",CellChangeTimes -> {{3.862914648457615`*^9,3.862914725132659`*^9},{3.862914773426038`*^9,3.862914817446074`*^9},{3.8629148641752653`*^9,3.862914902327786`*^9},3.862914944032827`*^9,3.862915036934634`*^9},
-CellLabel -> "Out[74]=",ExpressionUUID -> "b9adcb85-f188-4700-a9a8-e128dcc9a0b7"]},
-Open],ExpressionUUID -> "b3e19885-ad94-46d0-aaac-52c91d6c05d8"],Cell[
-CellGroupData[
-{Cell[
-BoxData[RowBox[{"SteinerInEllipseArea","[",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[
-{"3.5",",",RowBox[{"-","8.5"}]}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"-","6.1"}],",",RowBox[
-{"-",".5"}]}],"}"}],",",RowBox[{"{",RowBox[{"8.1",",",RowBox[{"-","3.2"}]}],"}"}]}],"}"}],"]"}]],
-"Input",CellChangeTimes -> {{3.8629149695559273`*^9,3.862915018371079`*^9}},CellLabel -> "In[75]:=",
-ExpressionUUID -> "50d8e67d-d44a-4f06-b218-89f43885b6f2"],Cell[
-BoxData["26.5056547093427`"],
-"Output",CellChangeTimes -> {{3.862915018947028`*^9,3.862915038637721`*^9}},CellLabel -> "Out[75]=",
-ExpressionUUID -> "912b7e6b-7d5c-4eab-b63a-a3537ada9aa3"]},Open],ExpressionUUID -> "f536e2aa-d417-439e-9443-046157d393f7"],Cell[
-CellGroupData[
-{Cell[
-BoxData[RowBox[{"Solve","[",RowBox[{RowBox[{RowBox[{RowBox[{"(",RowBox[{RowBox[
-{"x","^","2"}]," ","+"," ","2"}],")"}]," ",RowBox[{"(",RowBox[{RowBox[{"x","^","2"}]," ","-"," ","2"}],")"}]}]," ","=="," ","0"}],","," ","x"}],"]"}]],
-"Input",CellLabel -> "In[2]:= ",ExpressionUUID -> "f6052f59-7408-457e-9f4e-09a78b975d92"],Cell[
-BoxData[
-RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{"x","\[Rule]",RowBox[{"-",SqrtBox["2"]}]}],"}"}],",",RowBox[
-{"{",RowBox[{"x","\[Rule]",RowBox[{RowBox[{"-","\[ImaginaryI]"}]," ",SqrtBox["2"]}]}],"}"}],",",RowBox[
-{"{",RowBox[{"x","\[Rule]",RowBox[{"\[ImaginaryI]"," ",SqrtBox["2"]}]}],"}"}],",",RowBox[
-{"{",RowBox[{"x","\[Rule]",SqrtBox["2"]}],"}"}]}],"}"}],StandardForm],"Output",CellLabel -> "Out[2]= ",
-ExpressionUUID -> "23870cd8-8183-4ec0-a419-f8f64bbdce2c"]},Open],ExpressionUUID -> "73107879-7366-482e-b597-f1eef066e855"]},
-StyleDefinitions -> "Default.nb",WindowSize -> {808,805},WindowMargins -> {{Automatic,340},{Automatic,18}},
-FrontEndVersion -> "13. for Wolfram Cloud 1.62 (April 8, 2022)",ExpressionUUID -> "15e1dfd0-5d5f-48fc-92b5-91a9394eaad2",
-TaggingRules -> Association["TryRealOnly" -> False]]
+(* Challenge: creating a function, SteinerInellipseArea, that computes the area of the 
+Steiner inellipse of a given triangle. The Steiner inellipse is a unique ellipse that is inscribed 
+in a triangle, touching the midpoints of each side. *)
+
+(* Vertices  of  the  triangles  as  complex  numbers *)
+z1 = -1.5;
+z2 = 1.5;
+z3 = 1.5 I;
+(* Utility function to get (x,y) from complex number z *)
+xy[z_] := {Re[z], Im[z]}
+(* Steiner polynomial *)
+p = (z - z1) (z - z2) (z - z3);
+(* Derivative is a quadratic polynomial *)
+pd = Simplify[D[p, z]];
+(* The foci f1 and f2 of the Steiner Innelipse are given by the roots \
+of p *)
+{f1, f2} = z /. Solve[pd == 0, z];
+f1;
+f2;
+(* Ellipse centre *)
+centre = (f1 + f2)/2;
+(* The points of tangency v1,v2,v3 are at the mid-points of the \
+triangles sides *)
+v1 = (z1 + z2)/2;
+v2 = (z2 + z3)/2;
+v3 = (z1 + z3)/2;
+(* Compute the equation of the ellipse *)
+l = N[Abs[f1 - v1] + Abs[f2 - v1]];
+d1 = {x, y} - N[xy[f1]];
+d2 = {x, y} - N[xy[f2]];
+eq = Simplify[Sqrt[Dot[d1, d1]] + Sqrt[Dot[d2, d2]]] - l;
+
+(* Computing the area *)
+
+a = l/2 ;(* Semi-major axis *)
+c = N[Abs[f1 - centre]]; (* Eccentricty *)
+b = Sqrt[a^2 - c^2];
+area = Pi*a*b ;
+
+Print["The area is: ", area]
+
+(* This plots the result *)
+
+ellG = ContourPlot[eq == 0, {x, -15, 15}, {y, -15, 15}, 
+   PlotPoints -> 50];
+fG = Graphics[{Blue, PointSize[Medium], Point[{xy[f1], xy[f2]}]}];
+triangleG = 
+  Graphics[{LightGray, Triangle[{{xy[z1], xy[z2], xy[z3]}}]}];
+verticesG = 
+  Graphics[{Black, PointSize[Medium], 
+    Point[{xy[z1], xy[z2], xy[z3]}]}];
+tangenciesG = 
+  Graphics[{Red, PointSize[Medium], 
+    Point[{xy[v1], xy[v2], xy[v3]}]}];
+centreG = Graphics[{Red, PointSize[Medium], Point[xy[centre]]}];
+Show[triangleG, verticesG, tangenciesG, centreG, fG, ellG]
+
+
+SteinerInEllipseArea[triangle_] := 
+  Module[{z1, z2, z3, x1, y1, x2, y2, x3, y3, f1, f2, centre, v1, v2, 
+    v3, d1, d2, l, a, b, c, area, p, pd, z},
+   {{x1, y1}, {x2, y2}, {x3, y3}} = triangle;
+   z1 = x1 + y1*I;
+   z2 = x2 + y2*I;
+   z3 = x3 + y3*I;
+   p = (z - z1) (z - z2) (z - z3);
+   (* Derivative is a quadratic polynomial *)
+   pd = Simplify[D[p, z]];
+   (* The foci f1 and f2 of the Steiner Innelipse are given by the \
+roots of p *)
+   {f1, f2} = z /. Solve[pd == 0, z];
+   (* Ellipse centre *)
+   centre = (f1 + f2)/2;
+   (* The points of tangency v1,v2,v3 are at the mid-
+   points of the triangles sides *)
+   v1 = (z1 + z2)/2;
+   v2 = (z2 + z3)/2;
+   v3 = (z1 + z3)/2;
+   (* Compute the equation of the ellipse *)
+   l = N[Abs[f1 - v1] + Abs[f2 - v1]];
+   (* Computing the area *)
+   a = l/2 ;(* Semi-major axis *)
+   c = N[Abs[f1 - centre]]; (* Eccentricty *)
+   b = Sqrt[a^2 - c^2]; (* Semi-mino axis *)
+   area = Pi*a*b ;
+   area
+   ];
