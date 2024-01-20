@@ -1,5 +1,5 @@
-(*Challenge: writing a function, MaxColorDistance, which identifies the pair or 
-pairs of colors in an image that are most distinct from each other, based on color distance.*)
+(* Challenge: writing a function, MaxColorDistance, which identifies the pair or 
+pairs of colors in an image that are most distinct from each other, based on color distance. *)
 
 colors = DominantColors[image]
 
