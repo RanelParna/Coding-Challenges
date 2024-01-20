@@ -1,0 +1,19 @@
+(* Challenge: Write code to determine if a given point in the plane is inside a given
+triangle. *)
+InsideTriangle[{{p1_,p2_},{q1_,q2_},{r1_,r2_}},{s1_,s2_}]:=
+RegionMember[Triangle[{{p1, p2}, {q1, q2}, {r1, r2}}], {s1, s2}]
+
+(* Challenge: Write code to find the kth permutation from the n! permutations of {1,…,n}. *)
+PermutationIndex[n_, k_] := Permutations[Range[n]]〚k〛
+
+(* Challenge: Write a function that finds all of the prime numbers among the first n terms of the Fibonacci sequence. *)
+FibonacciPrimes[n_Integer?Positive] := Select[Fibonacci[Range[n]], PrimeQ]
+
+(* Challenge: Write a function called DigitCountPi that takes a positive integer n as input and outputs 
+a list of numbers that count the number of occurrences of the digits 0–9 in the n-digit decimal 
+expansion of π. The output should be a list of length 10. *)
+DigitCountPi[n_]:=
+Module[{x},
+x = Counts[Range[0,9]];
+Table[x[i] = 0, {i, 0, 9, 1}];
+Values[AssociateTo[x,Counts[First[RealDigits[Pi, 10, n]]]]]]
