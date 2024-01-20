@@ -1,0 +1,47 @@
+(* Challenge:  writing a function, MagicSquareQ, that determines whether a given square matrix is a 
+magic square. A matrix is considered a magic square if the sum of integers in each row, column, and 
+the two main diagonals are equal, and the matrix contains all integers from 1 to n² for an n×n matrix*)
+
+MagicSquareQ[M_] := 
+ Module[{answer, dims, targetValue, targetArray, MT, colsTotals, 
+   rowsTotals, totalDiag, totalAntiDiag, size},
+  (* We will assume that the answer to M being a magic square is true \
+and will try to deny its validity below *)
+  answer = True;
+  (* Dimension of the array *)
+  dims = Dimensions[M];
+  (* Check that we have a Matrix, i.e a 2x2 array*)
+  If[Length[dims] != 2, answer = False] ; 
+  (* Check that the matrix is a square matrix *)
+  If[dims[[1]] != dims[[2]], answer = False];
+  (* size of square matrix *)
+  size = dims[[1]] ;
+  
+  targetValue = Total[M[[1]]];
+  (* Copy the value size times in an array *)
+  targetArray = Table[targetValue, {i, size}];
+  
+  (* Adding the values of the matrix rows *)
+  rowsTotals = Table[Total[M[[i]]], {i, 1, size}];
+  If[rowsTotals != targetArray, answer = False];
+  (* Addin the values of the matrix columns *)
+  MT = Transpose[M];
+  colsTotals = Table[Total[MT[[i]]], {i, 1, size}];
+  If[colsTotals != targetArray, answer = False];
+  (* Total value of the diagonal *)
+  totalDiag = Total[Table[M[[i, i]], {i, 1, size}]];
+  If[totalDiag != targetValue, answer = False];
+  (* Total value of the anti-diagonal *)
+  totalAntiDiag = Total[Table[MT[[i, i]], {i, 1, size}]];
+  If[totalAntiDiag != targetValue, answer = False];
+  answer
+  ]
+
+(* Example *)
+M1 = {{2, 7, 6}, {9, 5, 1}, {4, 3, 8}};
+Print["Is the matrix ", MatrixForm[M1], " a magic square? ", 
+ MagicSquareQ[M1]]
+(* This is just M1 with a single element modified *)
+M2 = {{2, 7, 6}, {9, 5, 1}, {4, 3, 7}};
+Print["Is the matrix ", MatrixForm[M2], " a magic square? ", 
+ MagicSquareQ[M2]]
