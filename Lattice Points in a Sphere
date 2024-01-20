@@ -1,7 +1,16 @@
+# V1: 
+# A brute-force method 
+
 LatticeBallCountV1[r_ /; 0 < r ≤ 200] :=
 Module[{ps},
 ps = Length[Select[Tuples[Range[-Ceiling[r], Ceiling[r]], {3}],
 Norm[#] ≤ r &]]]
+
+# V2: 
+# The geometry is a bit more complicated but the results coincide with the first method
+# The idea is to compute the points on the sphere that are in the 8 octants, 12 semiplans, 8 axes and the center
+# and then add them together semi-planes. It should roughly take 1/8 of the time and 1/8 of the memory space 
+# In my computer it takes aprox. 44 seconds for n=200
 
 LatticeBallCount[n_] :=
 Module[{ps1, ps2, ps3, norms1, norms2, norms3, l1, l2, l3},
@@ -20,3 +29,5 @@ l3 = Length[Select[norms1, # ≤ n &]];
 (* 6 axes, 12 semi-planes,8 octants,center *)
 6 * l1 + 12 * l2 + 8 * l3 + 1
 ]
+
+# picture to help clarify concepts: https://shorturl.at/hklrv
