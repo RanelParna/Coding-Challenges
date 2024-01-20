@@ -1,4 +1,4 @@
-A collection of diverse mathematical and algorithmic challenges solved using the Wolfram Language.
+A collection of diverse mathematical and algorithmic challenges solved using the Wolfram Language (May 2022).
 
 * LatticeBallCount: Functions to count integer lattice points within a 3D sphere. Includes both a brute-force method and an optimized geometric approach.
 
